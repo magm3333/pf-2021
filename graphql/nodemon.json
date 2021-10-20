@@ -1,0 +1,9 @@
+{
+    "env" : {
+        "MONGO_USER": "admin",
+        "MONGO_PASSWORD": "password",
+        "MONGO_HOST": "localhost",
+        "MONGO_DB_NAME": "eventos",
+        "PORT": 3000
+    }
+}
