@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 
 const graphQlSchema=require('./graphql/schema/index');
 const graphQlResolvers=require('./graphql/resolvers/index');
+const isAuth=require('./middleware/is-auth');
 
 const Event = require('./models/event')
 const User = require('./models/user')
@@ -30,7 +31,7 @@ app.get('/', (req, res, next)=>{
 });
 
 
-
+app.use(isAuth);
 app.use('/graphql', graphqlHttp({
     schema: graphQlSchema,
     rootValue: graphQlResolvers,
